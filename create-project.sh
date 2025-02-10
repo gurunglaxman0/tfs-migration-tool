@@ -7,21 +7,17 @@ ACCESS_TOKEN=$(env  | grep GITLAB_ACCESS_TOKEN | grep -oe '[^=]*$') #tfs-migrati
 PROJECT_GROUP="genie_app"
 SUBGROUP_PATH="motherson-mtsl/apps/mobilitycoe"  # Adjust to your subgroup path
 
-PROJECT_NAME="new-project"  # Desired project name
-PROJECT_DESCRIPTION="This is a test project created via API"
-
-
 # Encode the subgroup path for API usage
 # ENCODED_SUBGROUP_PATH=$(echo -n "$SUBGROUP_PATH/$PROJECT_GROUP" | sed 's/\//%2F/g')
 ENCODED_SUBGROUP_PATH="$SUBGROUP_PATH/$PROJECT_GROUP"
 
-getNameSpaces() {
+getAllNameSpaces() {
     echo $(curl --header "Private-Token: $ACCESS_TOKEN" "$GITLAB_URL/api/v4/namespaces")
 }
 
-isPathExists() {
+getNameSpaceDetail() {
    local SEARCH_PATH=$1
-    namespaces=$(getNameSpaces)
+    namespaces=$(getAllNameSpaces)
     # project_id=$(echo "$response" | jq -r '.id')
     matched_entry=$(echo "$namespaces" | jq -r --arg search "$SEARCH_PATH" '.[] | select(.full_path == $search)')
 
@@ -36,39 +32,52 @@ isPathExists() {
 # Function to create a GitLab subgroup
 create_gitlab_subgroup() {
     local parent_group_id=$(env  | grep GITLAB_PARENT_GROUP_ID | grep -oe '[^=]*$') 
-    local subgroup_name=$2    # Name of the subgroup
-    local subgroup_path=$3    # Subgroup URL-friendly path
+    local SUBGROUP_PATH=$1   # Subgroup URL-friendly path
     local gitlab_url="https://gitlab.com/api/v4/groups"  # GitLab API endpoint
+    local MAIN_GROUP_PATH="motherson-mtsl/apps/mobilitycoe"  # Adjust to your subgroup path
+    local FULL_PATH="$MAIN_GROUP_PATH/$SUBGROUP_PATH"
 
-    # Make API request to create a subgroup
-    response=$(curl --silent --request POST "$gitlab_url" \
-        --header "Private-Token: $ACCESS_TOKEN" \
-        --header "Content-Type: application/json" \
-        --data "{
-            \"name\": \"$subgroup_name\",
-            \"path\": \"$subgroup_path\",
-            \"parent_id\": \"$parent_group_id\",
-            \"visibility\": \"private\"
-        }")
+    nameSpaceDetail=$(getNameSpaceDetail "$FULL_PATH")
+    
+    if [ "$nameSpaceDetail" = "-1" ]; then
+       # Make API request to create a subgroup
+        nameSpaceDetail=$(curl --silent --request POST "$gitlab_url" \
+            --header "Private-Token: $ACCESS_TOKEN" \
+            --header "Content-Type: application/json" \
+            --data "{
+                \"name\": \"$SUBGROUP_PATH\",
+                \"path\": \"$SUBGROUP_PATH\",
+                \"parent_id\": \"$parent_group_id\",
+                \"visibility\": \"private\"
+            }")
 
-    # Extract the created subgroup ID from the JSON response
-    subgroup_id=$(echo "$response" | jq -r '.id')
+        # Extract the created subgroup ID from the JSON response
+        nameSpaceDetail=$(echo "$nameSpaceDetail" | jq -r '.id')
 
-    # Check if the subgroup was created successfully
-    if [[ "$subgroup_id" == "null" || -z "$subgroup_id" ]]; then
-        echo "Error: Failed to create subgroup"
-        echo "Response: $response"
-        return 1  # Failure
+        # Check if the subgroup was created successfully
+        if [[ "$subgroup_id" == "null" || -z "$subgroup_id" ]]; then
+            echo "-1"
+            return -1  # Failure
+        fi
+
+        # echo "Subgroup created successfully! ID: $subgroup_id"
+        # echo "Web URL: $(echo "$response" | jq -r '.web_url')"
+        # echo "GroupId: $(echo "$response" | jq -r '.id')"
+        # echo $response
+        # return $(echo "$response" | jq -r '.id')
+        # echo $nameSpaceDetail
     fi
 
-    echo "Subgroup created successfully! ID: $subgroup_id"
-    echo "Web URL: $(echo "$response" | jq -r '.web_url')"
-    echo "GroupId: $(echo "$response" | jq -r '.id')"
+    # echo $nameSpaceDetail
+    echo $(echo "$nameSpaceDetail" | jq -r '.id')
+    
 }
 
-createProject() {
+create_gitlab_repository() {
     NAMESPACE_ID=$1
+    PROJECT_NAME=$2
     # API endpoint
+    PROJECT_DESCRIPTION="This project is created via API."
     API_URL="$GITLAB_URL/api/v4/projects"
     RESPONSE=$(curl --request POST "$API_URL" \
     --header "Private-Token: $ACCESS_TOKEN" \
@@ -83,6 +92,19 @@ createProject() {
     echo $(echo $RESPONSE | jq -r '.http_url_to_repo')
 }
 
+extract_subgroup_name() {
+    url=$1
+    # echo $url
+    result=$(echo "$url" | sed -E 's|.*SMG/([^/]+)/_git.*|\1|')
+    if [ "$result" = "$url" ]; then
+        result=$(echo "$url" | sed -E 's|.*MobilityCoE/([^/]+)/_git.*|\1|')
+         if [ "$result" = "$url" ]; then
+            echo ""
+         fi
+    fi
+    echo "$result"
+}
+
 # result=$(isPathExists "$ENCODED_SUBGROUP_PATH")
 # # echo "ENCODED_SUBGROUP_PATH: $ENCODED_SUBGROUP_PATH"
 # groupId=$(echo $result | jq -r '.id')
@@ -95,17 +117,15 @@ createProject() {
 
 #!/bin/bash
 
-
-
 # Example usage: Replace with actual values
 SUBGROUP_NAME="New Subgroup"  # Desired name
 SUBGROUP_PATH="new-subgroup"  # URL-friendly path (lowercase, no spaces)
 
 # Call the function with arguments
-# create_gitlab_subgroup "$PARENT_GROUP_ID" "$SUBGROUP_NAME" "$SUBGROUP_PATH"
+# create_gitlab_subgroup "$SUBGROUP_PATH"
 
-clone_git_repo() {
-    cd ""
+clone_tfs_repo() {
+    cd "workspace"
     local repo_url=$1   # Git repository URL
     local clone_dir=$(basename "$repo_url" .git)
 
@@ -124,6 +144,8 @@ clone_git_repo() {
     fi
     cd "$clone_dir"
     # checkout-all branches
-    checkOutAllBranches
-    cd "../"
 }
+
+
+# NAMESPACE_ID=$(create_gitlab_subgroup "$SUBGROUP_PATH")
+# echo $NAMESPACE_ID
