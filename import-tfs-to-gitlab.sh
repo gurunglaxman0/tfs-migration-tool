@@ -31,19 +31,20 @@ resetGitConfigFile() {
 #!/bin/bash
 
 # Input file containing URLs (one per line)
-input_file="../tfs-urls.txt"
+input_file="$PROJET_PATH/tfs-urls.txt"
 
 # Output JSON file
-output_file="../../output.json"
-failed_log="../../failed_urls.log"
-success_file="../../success_urls.log"
+output_file="$PROJET_PATH/output.json"
+failed_log="$PROJET_PATH/failed_urls.log"
+success_file="$PROJET_PATH/success_urls.log"
 
 # Check if the output JSON file exists and is valid; otherwise, initialize it
 if [[ ! -f "$output_file" || ! $(jq empty "$output_file" 2>/dev/null) ]]; then
     echo "[]" > "$output_file"
 fi
 
-cd "workspace"
+
+cd "$WORKSPACE_PATH"
 
 > "$failed_log"
 > "$success_file"
@@ -66,7 +67,7 @@ while IFS= read -r url || [[ -n "$url" ]]; do
     # # Extract repository name
     repo_name=$(basename "$url" .git)
 
-    cd "$repo_name"
+    cd "$WORKSPACE_PATH/$repo_name"
     # echo "repo_name $repo_name"
     # echo "subGroupName $subGroupName"
     checkOutAllBranches
@@ -100,7 +101,7 @@ while IFS= read -r url || [[ -n "$url" ]]; do
 
     echo "$gitlab_repo_url" >> "$success_file"
 
-    cd "../"
+   cd "$WORKSPACE_PATH"
 done < "$input_file"
 
 # Save updated JSON back to file

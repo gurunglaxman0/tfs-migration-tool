@@ -1,17 +1,1 @@
-[
-  {
-    "name": "SMP_CQAS_Android",
-    "tfsLink": "https://tfsci.mindeservices.com/tfs/SMG/SMP_CQAS/_git/SMP_CQAS_Android",
-    "gitlab_repo_url": ""
-  },
-  {
-    "name": "SMP_CQAS",
-    "tfsLink": "https://tfsci.mindeservices.com/tfs/SMG/SMP_CQAS/_git/SMP_CQAS",
-    "gitlab_repo_url": ""
-  },
-  {
-    "name": "SMP_CQAS_iOS",
-    "tfsLink": "https://tfsci.mindeservices.com/tfs/SMG/SMP_CQAS/_git/SMP_CQAS_iOS",
-    "gitlab_repo_url": ""
-  }
-]
+[]

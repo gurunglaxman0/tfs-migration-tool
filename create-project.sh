@@ -1,4 +1,6 @@
 #!/bin/bash
+PROJET_PATH="/Users/lakshmangurung/Documents/Workspace/tfs/gitlab-tool"
+WORKSPACE_PATH="$PROJET_PATH/workspace"
 . ./git-pull-all-branches.sh
 
 # Configuration

@@ -3,12 +3,12 @@
 # Define TFS Server, Project, and API Version
 TFS_URL="https://tfsci.mindeservices.com/tfs"
 # GET https://{instance}/{collection}/{project}/_apis/sourceProviders/{providerName}/repositories?api-version=7.1
-# ORG_NAME="MobilityCoE"   # Change this to your organization
-ORG_NAME="SMG"   # Change this to your organization
+ORG_NAME="MobilityCoE"   # Change this to your organization
+# ORG_NAME="SMG"   # Change this to your organization
 # PROJECT_NAME="U1070_QuickForm"  # Change this to your project name
 API_VERSION="6.0"
 
-projects=("SMP_CQAS") 
+projects=("DO_S06S_BoardMeeting") 
 # Personal Access Token (PAT) - Base64 Encode "username:PAT"
 # If using a token, use ":PAT" instead of "username:PAT"
 
@@ -23,7 +23,7 @@ for PROJECT_NAME in "${projects[@]}"; do
     # API URL to list all projects
     API_URL="$TFS_URL/$ORG_NAME/$PROJECT_NAME/_apis/git/repositories"
     # Fetch project list
-    response=$(curl -s -u :$PAT -H "Content-Type: application/json" "$API_URL")
+    response=$(curl -s -u :$PAT -H "Content-Type: application/json" "$API_URL" -v)
 
     # Extract project names using jq
     # echo "$response" | jq '.value[] | {id: .id, name: .name, state: .state, url: .url}'
