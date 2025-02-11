@@ -56,15 +56,15 @@ create_gitlab_subgroup() {
 
 
         # Extract the created subgroup ID from the JSON response
-        nameSpaceDetail=$(echo "$nameSpaceDetail" | jq -r '.id')
+        ID=$(echo "$nameSpaceDetail" | jq -r '.id')
         echo "Group Creation Start \---------- \n" >> "$LOG_FILE"
         echo "$nameSpaceDetail \---------- \n" >> "$LOG_FILE"
         echo "Group Creation End: \---------- \n" >> "$LOG_FILE"
 
         # Check if the subgroup was created successfully
-        if [[ "$nameSpaceDetail" == "null" || -z "$nameSpaceDetail" ]]; then
+        if [[ "$ID" == "null" || -z "$ID" ]]; then
             echo "-1"
-             echo "Failed To Create Group: $FULL_PATH\n" >> "$LOG_FILE"
+            echo "Failed To Create Group: $FULL_PATH\n" >> "$LOG_FILE"
             return -1  # Failure
         fi
 
@@ -80,8 +80,8 @@ create_gitlab_subgroup() {
     echo "Group NAMESPACEID: ---------- \n" >> "$LOG_FILE"
     # echo $nameSpaceDetail
     ID=$(echo "$nameSpaceDetail" | jq -r '.id')
-     echo "Group NAMESPACEID: $ID---------- \n" >> "$LOG_FILE"
-     echo $ID
+    echo "Group NAMESPACEID: $ID---------- \n" >> "$LOG_FILE"
+    echo $ID
     
 }
 
