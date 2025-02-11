@@ -55,7 +55,6 @@ json_array=$(cat "$output_file")
 # Read URLs from the input file and process them
 while IFS= read -r url || [[ -n "$url" ]]; do
     TFS_CLONE_RESULT=$(clone_tfs_repo "$url")
-     echo "Workspace: " $(pwd)
     if [ "$TFS_CLONE_RESULT" != "SUCCESS" ]; then
          echo "$url" >> "$failed_log"
          echo "FAILED to clone TFS"  $(pwd)
@@ -81,7 +80,6 @@ while IFS= read -r url || [[ -n "$url" ]]; do
 
     gitlab_repo_url=$(create_gitlab_repository "$NAMESPACE_ID" "$repo_name")
    
-   echo $gitlab_repo_url
     # # # Checkout All branches
     # # https://gitlab.com/motherson-mtsl/apps/mobilitycoe/U1070_QuickForm/mquick_form_mobile.git
 
@@ -89,6 +87,7 @@ while IFS= read -r url || [[ -n "$url" ]]; do
    
     if [ $gitlab_repo_url = null ];  then
         echo "$url" >> "$failed_log"
+        echo "FAILED TO Get Github URL: \n" >> "$LOG_FILE"
         continue
     fi
     

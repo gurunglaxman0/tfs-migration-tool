@@ -1,6 +1,7 @@
 #!/bin/bash
 PROJET_PATH="/Users/lakshmangurung/Documents/Workspace/tfs/gitlab-tool"
 WORKSPACE_PATH="$PROJET_PATH/workspace"
+LOG_FILE="$PROJET_PATH/access.log"
 . ./git-pull-all-branches.sh
 
 # Configuration
@@ -41,6 +42,7 @@ create_gitlab_subgroup() {
     nameSpaceDetail=$(getNameSpaceDetail "$FULL_PATH")
     
     if [ "$nameSpaceDetail" = "-1" ]; then
+        echo "$FULL_PATH doesnt exists. Creating One" >> "$LOG_FILE"
        # Make API request to create a subgroup
         nameSpaceDetail=$(curl --silent --request POST "$gitlab_url" \
             --header "Private-Token: $ACCESS_TOKEN" \
@@ -52,12 +54,17 @@ create_gitlab_subgroup() {
                 \"visibility\": \"private\"
             }")
 
+
         # Extract the created subgroup ID from the JSON response
         nameSpaceDetail=$(echo "$nameSpaceDetail" | jq -r '.id')
+        echo "Group Creation Start \---------- \n" >> "$LOG_FILE"
+        echo "$nameSpaceDetail \---------- \n" >> "$LOG_FILE"
+        echo "Group Creation End: \---------- \n" >> "$LOG_FILE"
 
         # Check if the subgroup was created successfully
         if [[ "$nameSpaceDetail" == "null" || -z "$nameSpaceDetail" ]]; then
             echo "-1"
+             echo "Failed To Create Group: $FULL_PATH\n" >> "$LOG_FILE"
             return -1  # Failure
         fi
 
@@ -69,8 +76,12 @@ create_gitlab_subgroup() {
         # echo $nameSpaceDetail
     fi
 
+
+    echo "Group NAMESPACEID: ---------- \n" >> "$LOG_FILE"
     # echo $nameSpaceDetail
-    echo $(echo "$nameSpaceDetail" | jq -r '.id')
+    ID=$(echo "$nameSpaceDetail" | jq -r '.id')
+     echo "Group NAMESPACEID: $ID---------- \n" >> "$LOG_FILE"
+     echo $ID
     
 }
 
@@ -92,6 +103,7 @@ create_gitlab_repository() {
     --proxy http://localhost:9090
     )
 
+    echo "create_gitlab_repository Response: ---------- \n $RESPONSE\n-------" >> "$LOG_FILE"
     echo $(echo $RESPONSE | jq -r '.http_url_to_repo')
 }
 

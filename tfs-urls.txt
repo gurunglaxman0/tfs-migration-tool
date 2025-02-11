@@ -1,3 +1,1 @@
-https://tfsci.mindeservices.com/tfs/MobilityCoE/DO_S06S_BoardMeeting/_git/boardmeeting_AppStore
 https://tfsci.mindeservices.com/tfs/MobilityCoE/DO_S06S_BoardMeeting/_git/boardmeeting-document
-https://tfsci.mindeservices.com/tfs/MobilityCoE/DO_S06S_BoardMeeting/_git/DO_S06S_BoardMeeting
