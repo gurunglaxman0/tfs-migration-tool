@@ -125,27 +125,32 @@ SUBGROUP_PATH="new-subgroup"  # URL-friendly path (lowercase, no spaces)
 # create_gitlab_subgroup "$SUBGROUP_PATH"
 
 clone_tfs_repo() {
-    cd "workspace"
     local repo_url=$1   # Git repository URL
     local clone_dir=$(basename "$repo_url" .git)
 
     # Check if Git is installed
     if ! command -v git &> /dev/null; then
         echo "Error: Git is not installed."
-        return 1
+        return 0
     fi
 
     # Clone the repository
     if git clone "$repo_url" "$clone_dir"; then
-        echo "Repository cloned successfully to $clone_dir"
+        echo "SUCCESS"
     else
         echo "Error: Failed to clone repository."
-        return 1
+        return -1
     fi
-    cd "$clone_dir"
+    
     # checkout-all branches
 }
 
 
 # NAMESPACE_ID=$(create_gitlab_subgroup "$SUBGROUP_PATH")
 # echo $NAMESPACE_ID
+
+# test() {
+#     cd "workspace"
+# }
+# test
+# echo $(pwd)

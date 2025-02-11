@@ -2,6 +2,7 @@
 checkOutAllBranches() {
     set -e  # Exit if any command fails
 
+    echo "checkOutAllBranches:" $(pwd)
     # Fetch all branches
     git fetch --all
 
