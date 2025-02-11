@@ -1,6 +1,6 @@
 #!/bin/bash
 checkOutAllBranches() {
-    set -e  # Exit if any command fails
+    # set -e  # Exit if any command fails
 
     echo "checkOutAllBranches:" $(pwd)
     # Fetch all branches

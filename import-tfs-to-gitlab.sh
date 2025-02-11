@@ -6,6 +6,7 @@
 
 
 resetGitConfigFile() {
+
     GIT_URL="$1"
     CONFIG_FILE=".git/config"  # Change this if needed
 
@@ -25,7 +26,7 @@ resetGitConfigFile() {
 
 # cd "ms_ads_ios"
 
-cd "workspace"
+
 
 #!/bin/bash
 
@@ -33,16 +34,20 @@ cd "workspace"
 input_file="../tfs-urls.txt"
 
 # Output JSON file
-output_file="../output.json"
-failed_log="../failed_urls.log"
-success_file="../success_urls.log"
+output_file="../../output.json"
+failed_log="../../failed_urls.log"
+success_file="../../success_urls.log"
 
 # Check if the output JSON file exists and is valid; otherwise, initialize it
 if [[ ! -f "$output_file" || ! $(jq empty "$output_file" 2>/dev/null) ]]; then
     echo "[]" > "$output_file"
 fi
 
+cd "workspace"
+
 > "$failed_log"
+> "$success_file"
+
 # Read existing JSON data
 json_array=$(cat "$output_file")
 
@@ -62,16 +67,24 @@ while IFS= read -r url || [[ -n "$url" ]]; do
     repo_name=$(basename "$url" .git)
 
     cd "$repo_name"
-    echo "repo_name $repo_name"
+    # echo "repo_name $repo_name"
+    # echo "subGroupName $subGroupName"
     checkOutAllBranches
 
     NAMESPACE_ID=$(create_gitlab_subgroup "$subGroupName")
-    
+    if [ "$NAMESPACE_ID" = "" ];  then
+        echo "$url" >> "$failed_log"
+        continue
+    fi
+    # echo "NAMESPACE_ID: $NAMESPACE_ID"
+
     gitlab_repo_url=$(create_gitlab_repository "$NAMESPACE_ID" "$repo_name")
    
+   echo $gitlab_repo_url
     # # # Checkout All branches
     # # https://gitlab.com/motherson-mtsl/apps/mobilitycoe/U1070_QuickForm/mquick_form_mobile.git
 
+    # echo "gitlab_repo_url: $gitlab_repo_url"
    
     if [ $gitlab_repo_url = null ];  then
         echo "$url" >> "$failed_log"
@@ -85,11 +98,11 @@ while IFS= read -r url || [[ -n "$url" ]]; do
     json_array=$(echo "$json_array" | jq --arg name "$name" --arg link "$url" --arg gitlab_repo_url "$gitlab_repo_url" --arg repo_name "$repo_name" '. + [{"name": $repo_name, "tfsLink": $link, "gitlab_repo_url":$gitlab_repo_url}]')
     # # 
 
-    echo "$url" >> "$success_file"
-    
+    echo "$gitlab_repo_url" >> "$success_file"
+
     cd "../"
 done < "$input_file"
 
 # Save updated JSON back to file
 
-echo "$json_array" > "$output_file"
+# echo "$json_array" > "$output_file"

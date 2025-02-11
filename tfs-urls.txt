@@ -1,2 +1,1 @@
-https://tfsci.mindeservices.com/tfs/MobilityCoE/U1070_QuickForm/_git/mquick_form_mobile
-https://tfsci.mindeservices.com/tfs/SMG/MS_CBS/_git/ms_ads_ios
+https://tfsci.mindeservices.com/tfs/SMG/SMP_CQAS/_git/SMP_CQAS_Android

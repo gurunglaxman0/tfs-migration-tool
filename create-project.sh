@@ -36,7 +36,6 @@ create_gitlab_subgroup() {
     local gitlab_url="https://gitlab.com/api/v4/groups"  # GitLab API endpoint
     local MAIN_GROUP_PATH="motherson-mtsl/apps/mobilitycoe"  # Adjust to your subgroup path
     local FULL_PATH="$MAIN_GROUP_PATH/$SUBGROUP_PATH"
-
     nameSpaceDetail=$(getNameSpaceDetail "$FULL_PATH")
     
     if [ "$nameSpaceDetail" = "-1" ]; then
@@ -55,7 +54,7 @@ create_gitlab_subgroup() {
         nameSpaceDetail=$(echo "$nameSpaceDetail" | jq -r '.id')
 
         # Check if the subgroup was created successfully
-        if [[ "$subgroup_id" == "null" || -z "$subgroup_id" ]]; then
+        if [[ "$nameSpaceDetail" == "null" || -z "$nameSpaceDetail" ]]; then
             echo "-1"
             return -1  # Failure
         fi
@@ -87,7 +86,9 @@ create_gitlab_repository() {
         \"description\": \"$PROJECT_DESCRIPTION\",
         \"namespace_id\": \"$NAMESPACE_ID\",
         \"visibility\": \"private\"
-    }")
+    }" \
+    --proxy http://localhost:9090
+    )
 
     echo $(echo $RESPONSE | jq -r '.http_url_to_repo')
 }
