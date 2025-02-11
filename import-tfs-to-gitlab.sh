@@ -33,8 +33,9 @@ cd "workspace"
 input_file="../tfs-urls.txt"
 
 # Output JSON file
-output_file="output.json"
-failed_log="failed_urls.log"
+output_file="../output.json"
+failed_log="../failed_urls.log"
+success_file="../success_urls.log"
 
 # Check if the output JSON file exists and is valid; otherwise, initialize it
 if [[ ! -f "$output_file" || ! $(jq empty "$output_file" 2>/dev/null) ]]; then
@@ -84,10 +85,11 @@ while IFS= read -r url || [[ -n "$url" ]]; do
     json_array=$(echo "$json_array" | jq --arg name "$name" --arg link "$url" --arg gitlab_repo_url "$gitlab_repo_url" --arg repo_name "$repo_name" '. + [{"name": $repo_name, "tfsLink": $link, "gitlab_repo_url":$gitlab_repo_url}]')
     # # 
 
+    echo "$url" >> "$success_file"
+    
     cd "../"
 done < "$input_file"
 
 # Save updated JSON back to file
 
-# Display output JSON file
-cat "$output_file"
+echo "$json_array" > "$output_file"
