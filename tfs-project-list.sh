@@ -9,7 +9,7 @@ ORG_NAME="MobilityCoE"   # Change this to your organization
 API_VERSION="6.0"
 
 # projects=("U0117_F5App") 
-PROJECT_NAME="U0117_MyPlantApp"
+PROJECT_NAME="SWS_S07D_EMS"
 # Personal Access Token (PAT) - Base64 Encode "username:PAT"
 # If using a token, use ":PAT" instead of "username:PAT"
 

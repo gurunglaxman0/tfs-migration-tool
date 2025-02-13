@@ -1,11 +1,4 @@
-https://tfsci.mindeservices.com/tfs/MobilityCoE/U0117_MyPlantApp/_git/android
-https://tfsci.mindeservices.com/tfs/MobilityCoE/U0117_MyPlantApp/_git/myplant_ApiGateway
-https://tfsci.mindeservices.com/tfs/MobilityCoE/U0117_MyPlantApp/_git/myplant_ResourceFetcherMicroservice
-https://tfsci.mindeservices.com/tfs/MobilityCoE/U0117_MyPlantApp/_git/U0117_MyPlantApp
-https://tfsci.mindeservices.com/tfs/MobilityCoE/U0117_MyPlantApp/_git/myplant-Document
-https://tfsci.mindeservices.com/tfs/MobilityCoE/U0117_MyPlantApp/_git/myplant_ApiGateway_20220124
-https://tfsci.mindeservices.com/tfs/MobilityCoE/U0117_MyPlantApp/_git/myplant_web
-https://tfsci.mindeservices.com/tfs/MobilityCoE/U0117_MyPlantApp/_git/myplant_android
-https://tfsci.mindeservices.com/tfs/MobilityCoE/U0117_MyPlantApp/_git/service-portal
-https://tfsci.mindeservices.com/tfs/MobilityCoE/U0117_MyPlantApp/_git/myplant_DiscoveryServerMicroservice
-https://tfsci.mindeservices.com/tfs/MobilityCoE/U0117_MyPlantApp/_git/myplant_ios
+https://tfsci.mindeservices.com/tfs/MobilityCoE/SWS_S07D_EMS/_git/ems-and
+https://tfsci.mindeservices.com/tfs/MobilityCoE/SWS_S07D_EMS/_git/SWS_S07D_EMS
+https://tfsci.mindeservices.com/tfs/MobilityCoE/SWS_S07D_EMS/_git/ems-ios
+https://tfsci.mindeservices.com/tfs/MobilityCoE/SWS_S07D_EMS/_git/ems-document
