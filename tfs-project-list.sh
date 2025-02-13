@@ -8,7 +8,7 @@ ORG_NAME="MobilityCoE"   # Change this to your organization
 # PROJECT_NAME="U1070_QuickForm"  # Change this to your project name
 API_VERSION="6.0"
 
-projects=("SMG_S07D_SMGConnect") 
+projects=("SWS_S07D_EMS") 
 # Personal Access Token (PAT) - Base64 Encode "username:PAT"
 # If using a token, use ":PAT" instead of "username:PAT"
 

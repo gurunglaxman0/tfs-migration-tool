@@ -1,5 +1,6 @@
 #!/bin/bash
 . ./create-project.sh
+. ./tfs-project-list.sh
 # Input file containing URLs (one per line)
 input_file="$PROJET_PATH/tfs-urls.txt"
 

@@ -1,8 +1,4 @@
-https://tfsci.mindeservices.com/tfs/MobilityCoE/SMG_S07D_SMGConnect/_git/smgconnect-ios-revamp
-https://tfsci.mindeservices.com/tfs/MobilityCoE/SMG_S07D_SMGConnect/_git/smgconnect-ios
-https://tfsci.mindeservices.com/tfs/MobilityCoE/SMG_S07D_SMGConnect/_git/smgconnect-and-eamdemo
-https://tfsci.mindeservices.com/tfs/MobilityCoE/SMG_S07D_SMGConnect/_git/smgconnect-docs
-https://tfsci.mindeservices.com/tfs/MobilityCoE/SMG_S07D_SMGConnect/_git/smgconnect-and-revamp
-https://tfsci.mindeservices.com/tfs/MobilityCoE/SMG_S07D_SMGConnect/_git/smgconnect-and
-https://tfsci.mindeservices.com/tfs/MobilityCoE/SMG_S07D_SMGConnect/_git/smgconnect-wap
-https://tfsci.mindeservices.com/tfs/MobilityCoE/SMG_S07D_SMGConnect/_git/smgconnect-ws
+https://tfsci.mindeservices.com/tfs/MobilityCoE/SWS_S07D_EMS/_git/ems-and
+https://tfsci.mindeservices.com/tfs/MobilityCoE/SWS_S07D_EMS/_git/SWS_S07D_EMS
+https://tfsci.mindeservices.com/tfs/MobilityCoE/SWS_S07D_EMS/_git/ems-ios
+https://tfsci.mindeservices.com/tfs/MobilityCoE/SWS_S07D_EMS/_git/ems-document
