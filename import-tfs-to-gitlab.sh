@@ -43,9 +43,6 @@ if [[ ! -f "$output_file" || ! $(jq empty "$output_file" 2>/dev/null) ]]; then
     echo "[]" > "$output_file"
 fi
 
-
-cd "$WORKSPACE_PATH"
-
 > "$failed_log"
 > "$success_file"
 
@@ -54,6 +51,7 @@ json_array=$(cat "$output_file")
 
 # Read URLs from the input file and process them
 while IFS= read -r url || [[ -n "$url" ]]; do
+    cd "$WORKSPACE_PATH"
     TFS_CLONE_RESULT=$(clone_tfs_repo "$url")
     if [ "$TFS_CLONE_RESULT" != "SUCCESS" ]; then
          echo "$url" >> "$failed_log"

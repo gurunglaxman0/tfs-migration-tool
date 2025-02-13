@@ -1,1 +1,6 @@
-https://tfsci.mindeservices.com/tfs/MobilityCoE/DO_S06S_BoardMeeting/_git/boardmeeting-document
+https://tfsci.mindeservices.com/tfs/MobilityCoE/DO_S06S_StarsApp/_git/starsapp-ios
+https://tfsci.mindeservices.com/tfs/MobilityCoE/DO_S06S_StarsApp/_git/starsapp-android
+https://tfsci.mindeservices.com/tfs/MobilityCoE/DO_S06S_StarsApp/_git/stars_ios_phase_2
+https://tfsci.mindeservices.com/tfs/MobilityCoE/DO_S06S_StarsApp/_git/starsapp-document
+https://tfsci.mindeservices.com/tfs/MobilityCoE/DO_S06S_StarsApp/_git/DO_S06S_StarsApp
+https://tfsci.mindeservices.com/tfs/MobilityCoE/DO_S06S_StarsApp/_git/stars_android_phase_2
