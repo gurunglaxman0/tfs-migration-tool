@@ -46,22 +46,20 @@ json_array=$(cat "$output_file")
 
 # Read URLs from the input file and process them
 while IFS= read -r url || [[ -n "$url" ]]; do
-    cd "$WORKSPACE_PATH"
+    subGroupName=$(extract_subgroup_name "$url")
+     cd "$WORKSPACE_PATH/$subGroupName"
+    # # Extract repository name
+    repo_name=$(basename "$url" .git)
+
+    echo "Starting to Import $subGroupName / $repo_name" >> "$LOG_FILE"
     TFS_CLONE_RESULT=$(clone_tfs_repo "$url")
     if [ "$TFS_CLONE_RESULT" != "SUCCESS" ]; then
          echo "$url" >> "$failed_log"
          echo "FAILED to clone TFS"  $(pwd)
          continue
     fi
-    
-    subGroupName=$(extract_subgroup_name "$url")
-   
-    # # Extract repository name
-    repo_name=$(basename "$url" .git)
 
-    cd "$WORKSPACE_PATH/$repo_name"
-    # echo "repo_name $repo_name"
-    # echo "subGroupName $subGroupName"
+    cd "$WORKSPACE_PATH/$subGroupName/$repo_name"
     checkOutAllBranches
 
     NAMESPACE_ID=$(create_gitlab_subgroup "$subGroupName")

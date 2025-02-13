@@ -1,7 +1,7 @@
 #!/bin/bash
 PROJET_PATH="/Users/lakshmangurung/Documents/Workspace/tfs/gitlab-tool"
 WORKSPACE_PATH="$PROJET_PATH/workspace"
-LOG_FILE="$PROJET_PATH/access.log"
+LOG_FILE="$PROJET_PATH/logs/access.log"
 . ./git-pull-all-branches.sh
 
 # Configuration
@@ -34,6 +34,7 @@ getNameSpaceDetail() {
 
 # Function to create a GitLab subgroup
 create_gitlab_subgroup() {
+     echo "------- Start create_gitlab_subgroup --------- " >> "$LOG_FILE"
     local parent_group_id=$(env  | grep GITLAB_PARENT_GROUP_ID | grep -oe '[^=]*$') 
     local SUBGROUP_PATH=$1   # Subgroup URL-friendly path
     local gitlab_url="https://gitlab.com/api/v4/groups"  # GitLab API endpoint
@@ -57,14 +58,13 @@ create_gitlab_subgroup() {
 
         # Extract the created subgroup ID from the JSON response
         ID=$(echo "$nameSpaceDetail" | jq -r '.id')
-        echo "Group Creation Start \---------- \n" >> "$LOG_FILE"
-        echo "$nameSpaceDetail \---------- \n" >> "$LOG_FILE"
-        echo "Group Creation End: \---------- \n" >> "$LOG_FILE"
 
         # Check if the subgroup was created successfully
         if [[ "$ID" == "null" || -z "$ID" ]]; then
             echo "-1"
             echo "Failed To Create Group: $FULL_PATH\n" >> "$LOG_FILE"
+
+            echo "------- End create_gitlab_subgroup --------- " >> "$LOG_FILE"
             return -1  # Failure
         fi
 
@@ -78,6 +78,7 @@ create_gitlab_subgroup() {
 
     ID=$(echo "$nameSpaceDetail" | jq -r '.id')
     echo "Group NAMESPACEID: $ID---------- \n" >> "$LOG_FILE"
+    echo "------- End create_gitlab_subgroup --------- " >> "$LOG_FILE"
     echo $ID
     
 }
@@ -139,21 +140,25 @@ SUBGROUP_PATH="new-subgroup"  # URL-friendly path (lowercase, no spaces)
 clone_tfs_repo() {
     local repo_url=$1   # Git repository URL
     local clone_dir=$(basename "$repo_url" .git)
-
+    echo "------- Start clone_tfs_repo --------- " >> "$LOG_FILE"
     # Check if Git is installed
     if ! command -v git &> /dev/null; then
-        echo "Error: Git is not installed."
+         echo " > Error: Git is not installed. " >> "$LOG_FILE"
         return 0
     fi
 
     # Clone the repository
     if git clone "$repo_url" "$clone_dir"; then
+        echo " > Success: " >> "$LOG_FILE"
         echo "SUCCESS"
     else
         echo "Error: Failed to clone repository."
+        echo " > Error: Failed to clone repository." >> "$LOG_FILE"
         return -1
     fi
-    
+
+
+    echo "------- End clone_tfs_repo --------- " >> "$LOG_FILE"
     # checkout-all branches
 }
 
