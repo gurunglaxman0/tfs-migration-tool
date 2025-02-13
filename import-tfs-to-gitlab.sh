@@ -100,6 +100,9 @@ while IFS= read -r url || [[ -n "$url" ]]; do
    cd "$WORKSPACE_PATH"
 done < "$input_file"
 
+git add .
+git commit -am "$PROJECT_NAME"
+
 # Save updated JSON back to file
 
 # echo "$json_array" > "$output_file"

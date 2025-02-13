@@ -1,4 +1,4 @@
-https://tfsci.mindeservices.com/tfs/MobilityCoE/SWS_S07D_EMS/_git/ems-and
-https://tfsci.mindeservices.com/tfs/MobilityCoE/SWS_S07D_EMS/_git/SWS_S07D_EMS
-https://tfsci.mindeservices.com/tfs/MobilityCoE/SWS_S07D_EMS/_git/ems-ios
-https://tfsci.mindeservices.com/tfs/MobilityCoE/SWS_S07D_EMS/_git/ems-document
+https://tfsci.mindeservices.com/tfs/MobilityCoE/U0117_F5App/_git/f5-android
+https://tfsci.mindeservices.com/tfs/MobilityCoE/U0117_F5App/_git/f5-document
+https://tfsci.mindeservices.com/tfs/MobilityCoE/U0117_F5App/_git/f5-ios
+https://tfsci.mindeservices.com/tfs/MobilityCoE/U0117_F5App/_git/U0117_F5App
