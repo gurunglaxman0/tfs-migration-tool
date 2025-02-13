@@ -76,9 +76,6 @@ create_gitlab_subgroup() {
         # echo $nameSpaceDetail
     fi
 
-
-    echo "Group NAMESPACEID: ---------- \n" >> "$LOG_FILE"
-    # echo $nameSpaceDetail
     ID=$(echo "$nameSpaceDetail" | jq -r '.id')
     echo "Group NAMESPACEID: $ID---------- \n" >> "$LOG_FILE"
     echo $ID
