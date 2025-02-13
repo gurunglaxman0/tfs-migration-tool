@@ -101,7 +101,7 @@ while IFS= read -r url || [[ -n "$url" ]]; do
 done < "$input_file"
 
 git add .
-git commit -am "$PROJECT_NAME"
+git commit -am "Imported $PROJECT_NAME"
 
 # Save updated JSON back to file
 
