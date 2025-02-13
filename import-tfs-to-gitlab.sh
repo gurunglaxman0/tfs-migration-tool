@@ -1,9 +1,12 @@
 #!/bin/bash
 . ./create-project.sh
-# Path to the Git config file
-# Example Usage: Replace with actual Git repository URL
-#!/bin/bash
+# Input file containing URLs (one per line)
+input_file="$PROJET_PATH/tfs-urls.txt"
 
+# Output JSON file
+output_file="$PROJET_PATH/logs/output.json"
+failed_log="$PROJET_PATH/logs/failed_urls.log"
+success_file="$PROJET_PATH/logs/success_urls.log"
 
 resetGitConfigFile() {
 
@@ -29,14 +32,6 @@ resetGitConfigFile() {
 
 
 #!/bin/bash
-
-# Input file containing URLs (one per line)
-input_file="$PROJET_PATH/tfs-urls.txt"
-
-# Output JSON file
-output_file="$PROJET_PATH/output.json"
-failed_log="$PROJET_PATH/failed_urls.log"
-success_file="$PROJET_PATH/success_urls.log"
 
 # Check if the output JSON file exists and is valid; otherwise, initialize it
 if [[ ! -f "$output_file" || ! $(jq empty "$output_file" 2>/dev/null) ]]; then
