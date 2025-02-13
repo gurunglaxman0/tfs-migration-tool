@@ -47,7 +47,12 @@ json_array=$(cat "$output_file")
 # Read URLs from the input file and process them
 while IFS= read -r url || [[ -n "$url" ]]; do
     subGroupName=$(extract_subgroup_name "$url")
-     cd "$WORKSPACE_PATH/$subGroupName"
+    TARGET_DIR="$WORKSPACE_PATH/$subGroupName"
+    if [ ! -d "$TARGET_DIR" ]; then
+        echo "Directory does not exist. Creating..."
+        mkdir -p "$TARGET_DIR"
+    fi
+     cd "$TARGET_DIR"
     # # Extract repository name
     repo_name=$(basename "$url" .git)
 
