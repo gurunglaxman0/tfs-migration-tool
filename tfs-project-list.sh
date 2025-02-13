@@ -8,7 +8,7 @@ ORG_NAME="MobilityCoE"   # Change this to your organization
 # PROJECT_NAME="U1070_QuickForm"  # Change this to your project name
 API_VERSION="6.0"
 
-projects=("DO_S06S_StarsApp") 
+projects=("DO_S11D_SPMS") 
 # Personal Access Token (PAT) - Base64 Encode "username:PAT"
 # If using a token, use ":PAT" instead of "username:PAT"
 

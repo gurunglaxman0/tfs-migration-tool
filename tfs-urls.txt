@@ -1,6 +1,9 @@
-https://tfsci.mindeservices.com/tfs/MobilityCoE/DO_S06S_StarsApp/_git/starsapp-ios
-https://tfsci.mindeservices.com/tfs/MobilityCoE/DO_S06S_StarsApp/_git/starsapp-android
-https://tfsci.mindeservices.com/tfs/MobilityCoE/DO_S06S_StarsApp/_git/stars_ios_phase_2
-https://tfsci.mindeservices.com/tfs/MobilityCoE/DO_S06S_StarsApp/_git/starsapp-document
-https://tfsci.mindeservices.com/tfs/MobilityCoE/DO_S06S_StarsApp/_git/DO_S06S_StarsApp
-https://tfsci.mindeservices.com/tfs/MobilityCoE/DO_S06S_StarsApp/_git/stars_android_phase_2
+https://tfsci.mindeservices.com/tfs/MobilityCoE/DO_S11D_SPMS/_git/spms-op-android
+https://tfsci.mindeservices.com/tfs/MobilityCoE/DO_S11D_SPMS/_git/nspDevicesWS
+https://tfsci.mindeservices.com/tfs/MobilityCoE/DO_S11D_SPMS/_git/stars-and
+https://tfsci.mindeservices.com/tfs/MobilityCoE/DO_S11D_SPMS/_git/DO_S11D_SPMS
+https://tfsci.mindeservices.com/tfs/MobilityCoE/DO_S11D_SPMS/_git/spms-web
+https://tfsci.mindeservices.com/tfs/MobilityCoE/DO_S11D_SPMS/_git/spms-visitor-android
+https://tfsci.mindeservices.com/tfs/MobilityCoE/DO_S11D_SPMS/_git/spms-document
+https://tfsci.mindeservices.com/tfs/MobilityCoE/DO_S11D_SPMS/_git/spms-visitor-ios
+https://tfsci.mindeservices.com/tfs/MobilityCoE/DO_S11D_SPMS/_git/spms-support-document
