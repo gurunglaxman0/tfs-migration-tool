@@ -1,5 +1,3 @@
-https://tfsci.mindeservices.com/tfs/MobilityCoE/MINDKK_S07I_Tsutsumi/_git/tsutsumi_framework_autoupdate-ios
-https://tfsci.mindeservices.com/tfs/MobilityCoE/MINDKK_S07I_Tsutsumi/_git/tsutsumi_android_demo
-https://tfsci.mindeservices.com/tfs/MobilityCoE/MINDKK_S07I_Tsutsumi/_git/tsutsumi_framework_manualupdate-ios
-https://tfsci.mindeservices.com/tfs/MobilityCoE/MINDKK_S07I_Tsutsumi/_git/tsutsumi-ios
-https://tfsci.mindeservices.com/tfs/MobilityCoE/MINDKK_S07I_Tsutsumi/_git/tsutsumi-and
+https://tfsci.mindeservices.com/tfs/MobilityCoE/U0117_MOMMS_Mobile/_git/momms-ios
+https://tfsci.mindeservices.com/tfs/MobilityCoE/U0117_MOMMS_Mobile/_git/momms-android
+https://tfsci.mindeservices.com/tfs/MobilityCoE/U0117_MOMMS_Mobile/_git/U0117_MOMMS_Mobile

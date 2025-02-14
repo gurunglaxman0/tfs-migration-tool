@@ -15,7 +15,7 @@ SUBGROUP_PATH="motherson-mtsl/apps/mobilitycoe"  # Adjust to your subgroup path
 ENCODED_SUBGROUP_PATH="$SUBGROUP_PATH/$PROJECT_GROUP"
 
 getAllNameSpaces() {
-    echo $(curl --header "Private-Token: $ACCESS_TOKEN" "$GITLAB_URL/api/v4/namespaces")
+    echo $(curl --header "Private-Token: $ACCESS_TOKEN" "$GITLAB_URL/api/v4/namespaces?per_page=100" --proxy http://localhost:9090)
 }
 
 getNameSpaceDetail() {
@@ -52,8 +52,10 @@ create_gitlab_subgroup() {
                 \"name\": \"$SUBGROUP_PATH\",
                 \"path\": \"$SUBGROUP_PATH\",
                 \"parent_id\": \"$parent_group_id\",
-                \"visibility\": \"private\"
-            }")
+                \"visibility\": \"private\"                                                                                                                                                                                                                            
+            }" \
+            --proxy http://localhost:9090
+            )
 
 
         # Extract the created subgroup ID from the JSON response
@@ -63,8 +65,6 @@ create_gitlab_subgroup() {
         if [[ "$ID" == "null" || -z "$ID" ]]; then
             echo "-1"
             echo "Failed To Create Group: $FULL_PATH\n" >> "$LOG_FILE"
-
-            echo "------- End create_gitlab_subgroup --------- " >> "$LOG_FILE"
             return -1  # Failure
         fi
 
@@ -162,8 +162,7 @@ clone_tfs_repo() {
     # checkout-all branches
 }
 
-
-# NAMESPACE_ID=$(create_gitlab_subgroup "$SUBGROUP_PATH")
+# NAMESPACE_ID=$(create_gitlab_subgroup "U0117_MOMMS_Mobile")
 # echo $NAMESPACE_ID
 
 # test() {
