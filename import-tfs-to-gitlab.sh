@@ -53,7 +53,7 @@ while IFS= read -r url || [[ -n "$url" ]]; do
         echo "Directory does not exist. Creating..."
         mkdir -p "$TARGET_DIR"
     fi
-     cd "$TARGET_DIR"
+    cd "$TARGET_DIR"
     # # Extract repository name
     repo_name=$(basename "$url" .git)
 

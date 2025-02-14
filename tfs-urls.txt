@@ -1,4 +1,5 @@
-https://tfsci.mindeservices.com/tfs/MobilityCoE/SWS_S07D_EMS/_git/ems-and
-https://tfsci.mindeservices.com/tfs/MobilityCoE/SWS_S07D_EMS/_git/SWS_S07D_EMS
-https://tfsci.mindeservices.com/tfs/MobilityCoE/SWS_S07D_EMS/_git/ems-ios
-https://tfsci.mindeservices.com/tfs/MobilityCoE/SWS_S07D_EMS/_git/ems-document
+https://tfsci.mindeservices.com/tfs/MobilityCoE/MINDKK_S07I_Tsutsumi/_git/tsutsumi_framework_autoupdate-ios
+https://tfsci.mindeservices.com/tfs/MobilityCoE/MINDKK_S07I_Tsutsumi/_git/tsutsumi_android_demo
+https://tfsci.mindeservices.com/tfs/MobilityCoE/MINDKK_S07I_Tsutsumi/_git/tsutsumi_framework_manualupdate-ios
+https://tfsci.mindeservices.com/tfs/MobilityCoE/MINDKK_S07I_Tsutsumi/_git/tsutsumi-ios
+https://tfsci.mindeservices.com/tfs/MobilityCoE/MINDKK_S07I_Tsutsumi/_git/tsutsumi-and
