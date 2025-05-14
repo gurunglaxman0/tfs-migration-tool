@@ -111,3 +111,203 @@ Group NAMESPACEID: 102355052----------
 create_gitlab_repository Response: ---------- 
  {"id":67123420,"description":"This project is created via API.","name":"U0117_MOMMS_Mobile","name_with_namespace":"Motherson / APPS / MobilityCOE / U0117_MOMMS_Mobile / U0117_MOMMS_Mobile","path":"U0117_MOMMS_Mobile","path_with_namespace":"motherson-mtsl/apps/mobilitycoe/U0117_MOMMS_Mobile/U0117_MOMMS_Mobile","created_at":"2025-02-14T09:29:48.330Z","default_branch":"main","tag_list":[],"topics":[],"ssh_url_to_repo":"git@gitlab.com:motherson-mtsl/apps/mobilitycoe/U0117_MOMMS_Mobile/U0117_MOMMS_Mobile.git","http_url_to_repo":"https://gitlab.com/motherson-mtsl/apps/mobilitycoe/U0117_MOMMS_Mobile/U0117_MOMMS_Mobile.git","web_url":"https://gitlab.com/motherson-mtsl/apps/mobilitycoe/U0117_MOMMS_Mobile/U0117_MOMMS_Mobile","readme_url":null,"forks_count":0,"avatar_url":null,"star_count":0,"last_activity_at":"2025-02-14T09:29:48.173Z","namespace":{"id":102355052,"name":"U0117_MOMMS_Mobile","path":"U0117_MOMMS_Mobile","kind":"group","full_path":"motherson-mtsl/apps/mobilitycoe/U0117_MOMMS_Mobile","parent_id":101812029,"avatar_url":null,"web_url":"https://gitlab.com/groups/motherson-mtsl/apps/mobilitycoe/U0117_MOMMS_Mobile"},"container_registry_image_prefix":"registry.gitlab.com/motherson-mtsl/apps/mobilitycoe/u0117_momms_mobile/u0117_momms_mobile","_links":{"self":"https://gitlab.com/api/v4/projects/67123420","issues":"https://gitlab.com/api/v4/projects/67123420/issues","merge_requests":"https://gitlab.com/api/v4/projects/67123420/merge_requests","repo_branches":"https://gitlab.com/api/v4/projects/67123420/repository/branches","labels":"https://gitlab.com/api/v4/projects/67123420/labels","events":"https://gitlab.com/api/v4/projects/67123420/events","members":"https://gitlab.com/api/v4/projects/67123420/members","cluster_agents":"https://gitlab.com/api/v4/projects/67123420/cluster_agents"},"packages_enabled":true,"empty_repo":true,"archived":false,"visibility":"private","resolve_outdated_diff_discussions":false,"container_expiration_policy":{"cadence":"1d","enabled":false,"keep_n":10,"older_than":"90d","name_regex":".*","name_regex_keep":null,"next_run_at":"2025-02-15T09:29:48.358Z"},"repository_object_format":"sha1","issues_enabled":true,"merge_requests_enabled":true,"wiki_enabled":true,"jobs_enabled":true,"snippets_enabled":true,"container_registry_enabled":true,"service_desk_enabled":true,"service_desk_address":"contact-project+motherson-mtsl-apps-mobilitycoe-u0117-momms-mobile-u0117-momms-67123420-issue-@incoming.gitlab.com","can_create_merge_request_in":true,"issues_access_level":"enabled","repository_access_level":"enabled","merge_requests_access_level":"enabled","forking_access_level":"enabled","wiki_access_level":"enabled","builds_access_level":"enabled","snippets_access_level":"enabled","pages_access_level":"private","analytics_access_level":"enabled","container_registry_access_level":"enabled","security_and_compliance_access_level":"private","releases_access_level":"enabled","environments_access_level":"enabled","feature_flags_access_level":"enabled","infrastructure_access_level":"enabled","monitor_access_level":"enabled","model_experiments_access_level":"enabled","model_registry_access_level":"enabled","emails_disabled":false,"emails_enabled":true,"shared_runners_enabled":true,"lfs_enabled":true,"creator_id":20390010,"import_url":null,"import_type":null,"import_status":"none","import_error":null,"open_issues_count":0,"description_html":"\u003cp data-sourcepos=\"1:1-1:32\" dir=\"auto\"\u003eThis project is created via API.\u003c/p\u003e","updated_at":"2025-02-14T09:29:48.330Z","ci_default_git_depth":20,"ci_delete_pipelines_in_seconds":null,"ci_forward_deployment_enabled":true,"ci_forward_deployment_rollback_allowed":true,"ci_job_token_scope_enabled":false,"ci_separated_caches":true,"ci_allow_fork_pipelines_to_run_in_parent_project":true,"ci_id_token_sub_claim_components":["project_path","ref_type","ref"],"build_git_strategy":"fetch","keep_latest_artifact":true,"restrict_user_defined_variables":true,"ci_pipeline_variables_minimum_override_role":"developer","runners_token":null,"runner_token_expiration_interval":null,"group_runners_enabled":true,"auto_cancel_pending_pipelines":"enabled","build_timeout":3600,"auto_devops_enabled":false,"auto_devops_deploy_strategy":"continuous","ci_push_repository_for_job_token_allowed":false,"ci_config_path":"","public_jobs":true,"shared_with_groups":[],"only_allow_merge_if_pipeline_succeeds":false,"allow_merge_on_skipped_pipeline":null,"request_access_enabled":true,"only_allow_merge_if_all_discussions_are_resolved":false,"remove_source_branch_after_merge":true,"printing_merge_request_link_enabled":true,"merge_method":"merge","squash_option":"default_off","enforce_auth_checks_on_uploads":true,"suggestion_commit_message":null,"merge_commit_template":null,"squash_commit_template":null,"issue_branch_template":null,"warn_about_potentially_unwanted_characters":true,"autoclose_referenced_issues":true,"max_artifacts_size":null,"approvals_before_merge":0,"mirror":false,"external_authorization_classification_label":"","marked_for_deletion_at":null,"marked_for_deletion_on":null,"requirements_enabled":false,"requirements_access_level":"enabled","security_and_compliance_enabled":true,"compliance_frameworks":[],"issues_template":null,"merge_requests_template":null,"ci_restrict_pipeline_cancellation_role":"developer","merge_pipelines_enabled":false,"merge_trains_enabled":false,"merge_trains_skip_train_allowed":false,"allow_pipeline_trigger_approve_deployment":false}
 -------
+Starting to Import U1070_QuickForm / ff-configuration
+------- Start clone_tfs_repo --------- 
+ > Error: Failed to clone repository.
+Starting to Import U1070_QuickForm / MicroserviceDiscoveryServer
+------- Start clone_tfs_repo --------- 
+Starting to Import U1070_QuickForm / ff-configuration
+------- Start clone_tfs_repo --------- 
+ > Success: 
+------- End clone_tfs_repo --------- 
+checkOutAllBranches PWD: /Users/lakshmangurung/Documents/Workspace/tfs/gitlab-tool/workspace/U1070_QuickForm/ff-configuration 
+
+------- Start create_gitlab_subgroup --------- 
+motherson-mtsl/apps/mobilitycoe/U1070_QuickForm doesnt exists. Creating One
+Failed To Create Group: motherson-mtsl/apps/mobilitycoe/U1070_QuickForm
+
+create_gitlab_repository Response: ---------- 
+ {"error":"invalid_token","error_description":"Token is expired. You can either do re-authorization or token refresh."}
+-------
+FAILED TO Get Github URL: 
+
+Starting to Import U1070_QuickForm / MicroserviceDiscoveryServer
+------- Start clone_tfs_repo --------- 
+ > Success: 
+------- End clone_tfs_repo --------- 
+checkOutAllBranches PWD: /Users/lakshmangurung/Documents/Workspace/tfs/gitlab-tool/workspace/U1070_QuickForm/MicroserviceDiscoveryServer 
+
+------- Start create_gitlab_subgroup --------- 
+motherson-mtsl/apps/mobilitycoe/U1070_QuickForm doesnt exists. Creating One
+Failed To Create Group: motherson-mtsl/apps/mobilitycoe/U1070_QuickForm
+
+create_gitlab_repository Response: ---------- 
+ {"error":"invalid_token","error_description":"Token is expired. You can either do re-authorization or token refresh."}
+-------
+FAILED TO Get Github URL: 
+
+Starting to Import U1070_QuickForm / QuickFormMicroservice
+------- Start clone_tfs_repo --------- 
+ > Success: 
+------- End clone_tfs_repo --------- 
+checkOutAllBranches PWD: /Users/lakshmangurung/Documents/Workspace/tfs/gitlab-tool/workspace/U1070_QuickForm/QuickFormMicroservice 
+
+------- Start create_gitlab_subgroup --------- 
+motherson-mtsl/apps/mobilitycoe/U1070_QuickForm doesnt exists. Creating One
+Failed To Create Group: motherson-mtsl/apps/mobilitycoe/U1070_QuickForm
+
+create_gitlab_repository Response: ---------- 
+ {"error":"invalid_token","error_description":"Token is expired. You can either do re-authorization or token refresh."}
+-------
+FAILED TO Get Github URL: 
+
+Starting to Import U1070_QuickForm / WebPortalMicroservice
+------- Start clone_tfs_repo --------- 
+ > Success: 
+------- End clone_tfs_repo --------- 
+checkOutAllBranches PWD: /Users/lakshmangurung/Documents/Workspace/tfs/gitlab-tool/workspace/U1070_QuickForm/WebPortalMicroservice 
+
+------- Start create_gitlab_subgroup --------- 
+motherson-mtsl/apps/mobilitycoe/U1070_QuickForm doesnt exists. Creating One
+Failed To Create Group: motherson-mtsl/apps/mobilitycoe/U1070_QuickForm
+
+create_gitlab_repository Response: ---------- 
+ {"error":"invalid_token","error_description":"Token is expired. You can either do re-authorization or token refresh."}
+-------
+FAILED TO Get Github URL: 
+
+Starting to Import U1070_QuickForm / U1070_QuickForm
+------- Start clone_tfs_repo --------- 
+ > Success: 
+------- End clone_tfs_repo --------- 
+checkOutAllBranches PWD: /Users/lakshmangurung/Documents/Workspace/tfs/gitlab-tool/workspace/U1070_QuickForm/U1070_QuickForm 
+
+------- Start create_gitlab_subgroup --------- 
+motherson-mtsl/apps/mobilitycoe/U1070_QuickForm doesnt exists. Creating One
+Failed To Create Group: motherson-mtsl/apps/mobilitycoe/U1070_QuickForm
+
+create_gitlab_repository Response: ---------- 
+ {"error":"invalid_token","error_description":"Token is expired. You can either do re-authorization or token refresh."}
+-------
+FAILED TO Get Github URL: 
+
+Starting to Import U1070_QuickForm / FormBuilderMicroservice
+------- Start clone_tfs_repo --------- 
+ > Success: 
+------- End clone_tfs_repo --------- 
+checkOutAllBranches PWD: /Users/lakshmangurung/Documents/Workspace/tfs/gitlab-tool/workspace/U1070_QuickForm/FormBuilderMicroservice 
+
+------- Start create_gitlab_subgroup --------- 
+motherson-mtsl/apps/mobilitycoe/U1070_QuickForm doesnt exists. Creating One
+Failed To Create Group: motherson-mtsl/apps/mobilitycoe/U1070_QuickForm
+
+create_gitlab_repository Response: ---------- 
+ {"error":"invalid_token","error_description":"Token is expired. You can either do re-authorization or token refresh."}
+-------
+FAILED TO Get Github URL: 
+
+Starting to Import U1070_QuickForm / mquick_form_mobile
+------- Start clone_tfs_repo --------- 
+ > Success: 
+------- End clone_tfs_repo --------- 
+checkOutAllBranches PWD: /Users/lakshmangurung/Documents/Workspace/tfs/gitlab-tool/workspace/U1070_QuickForm/mquick_form_mobile 
+
+------- Start create_gitlab_subgroup --------- 
+motherson-mtsl/apps/mobilitycoe/U1070_QuickForm doesnt exists. Creating One
+Failed To Create Group: motherson-mtsl/apps/mobilitycoe/U1070_QuickForm
+
+create_gitlab_repository Response: ---------- 
+ {"error":"invalid_token","error_description":"Token is expired. You can either do re-authorization or token refresh."}
+-------
+FAILED TO Get Github URL: 
+
+Starting to Import U1070_QuickForm / mquick_form_builder
+------- Start clone_tfs_repo --------- 
+ > Success: 
+------- End clone_tfs_repo --------- 
+checkOutAllBranches PWD: /Users/lakshmangurung/Documents/Workspace/tfs/gitlab-tool/workspace/U1070_QuickForm/mquick_form_builder 
+
+------- Start create_gitlab_subgroup --------- 
+motherson-mtsl/apps/mobilitycoe/U1070_QuickForm doesnt exists. Creating One
+Failed To Create Group: motherson-mtsl/apps/mobilitycoe/U1070_QuickForm
+
+create_gitlab_repository Response: ---------- 
+ {"error":"invalid_token","error_description":"Token is expired. You can either do re-authorization or token refresh."}
+-------
+FAILED TO Get Github URL: 
+
+Starting to Import U1070_QuickForm / Analyticd-Dashboard
+------- Start clone_tfs_repo --------- 
+ > Success: 
+------- End clone_tfs_repo --------- 
+checkOutAllBranches PWD: /Users/lakshmangurung/Documents/Workspace/tfs/gitlab-tool/workspace/U1070_QuickForm/Analyticd-Dashboard 
+
+------- Start create_gitlab_subgroup --------- 
+motherson-mtsl/apps/mobilitycoe/U1070_QuickForm doesnt exists. Creating One
+Failed To Create Group: motherson-mtsl/apps/mobilitycoe/U1070_QuickForm
+
+create_gitlab_repository Response: ---------- 
+ {"error":"invalid_token","error_description":"Token is expired. You can either do re-authorization or token refresh."}
+-------
+FAILED TO Get Github URL: 
+
+Starting to Import U1070_QuickForm / factory_forms_react_mobile
+------- Start clone_tfs_repo --------- 
+ > Success: 
+------- End clone_tfs_repo --------- 
+checkOutAllBranches PWD: /Users/lakshmangurung/Documents/Workspace/tfs/gitlab-tool/workspace/U1070_QuickForm/factory_forms_react_mobile 
+
+------- Start create_gitlab_subgroup --------- 
+motherson-mtsl/apps/mobilitycoe/U1070_QuickForm doesnt exists. Creating One
+Failed To Create Group: motherson-mtsl/apps/mobilitycoe/U1070_QuickForm
+
+create_gitlab_repository Response: ---------- 
+ {"error":"invalid_token","error_description":"Token is expired. You can either do re-authorization or token refresh."}
+-------
+FAILED TO Get Github URL: 
+
+Starting to Import U1070_QuickForm / quick_form_documents
+------- Start clone_tfs_repo --------- 
+ > Success: 
+------- End clone_tfs_repo --------- 
+checkOutAllBranches PWD: /Users/lakshmangurung/Documents/Workspace/tfs/gitlab-tool/workspace/U1070_QuickForm/quick_form_documents 
+
+------- Start create_gitlab_subgroup --------- 
+motherson-mtsl/apps/mobilitycoe/U1070_QuickForm doesnt exists. Creating One
+Failed To Create Group: motherson-mtsl/apps/mobilitycoe/U1070_QuickForm
+
+create_gitlab_repository Response: ---------- 
+ {"error":"invalid_token","error_description":"Token is expired. You can either do re-authorization or token refresh."}
+-------
+FAILED TO Get Github URL: 
+
+Starting to Import U1070_QuickForm / cloud-config-server
+------- Start clone_tfs_repo --------- 
+ > Success: 
+------- End clone_tfs_repo --------- 
+checkOutAllBranches PWD: /Users/lakshmangurung/Documents/Workspace/tfs/gitlab-tool/workspace/U1070_QuickForm/cloud-config-server 
+
+------- Start create_gitlab_subgroup --------- 
+motherson-mtsl/apps/mobilitycoe/U1070_QuickForm doesnt exists. Creating One
+Failed To Create Group: motherson-mtsl/apps/mobilitycoe/U1070_QuickForm
+
+create_gitlab_repository Response: ---------- 
+ {"error":"invalid_token","error_description":"Token is expired. You can either do re-authorization or token refresh."}
+-------
+FAILED TO Get Github URL: 
+
+Starting to Import U1070_QuickForm / APIGateway
+------- Start clone_tfs_repo --------- 
+ > Success: 
+------- End clone_tfs_repo --------- 
+checkOutAllBranches PWD: /Users/lakshmangurung/Documents/Workspace/tfs/gitlab-tool/workspace/U1070_QuickForm/APIGateway 
+
+------- Start create_gitlab_subgroup --------- 
+motherson-mtsl/apps/mobilitycoe/U1070_QuickForm doesnt exists. Creating One
+Failed To Create Group: motherson-mtsl/apps/mobilitycoe/U1070_QuickForm
+
+create_gitlab_repository Response: ---------- 
+ {"error":"invalid_token","error_description":"Token is expired. You can either do re-authorization or token refresh."}
+-------
+FAILED TO Get Github URL: 
+
